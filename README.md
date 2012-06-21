@@ -1,4 +1,4 @@
-# JavaScript testing
+# JavaScript Testing
 
 ---
 
@@ -11,7 +11,7 @@
 
 ---
 
-## Unit tests
+## Unit Tests
 
 Split functionality into contained units
 test each part
@@ -28,7 +28,7 @@ __Tests first__
 
 ---
 
-## Client side testing
+## Client Side Testing
 
 Client side testing is still not a common practise
 
@@ -56,14 +56,14 @@ Test if user interaction works as expected
 
 ---
 
-## Headless browsers
+## Headless Browsers
 
 Zombie.js
 PhantomJS
 
 ---
 
-# Testing frameworks
+# Testing Frameworks
 
 ---
 
@@ -79,7 +79,13 @@ PhantomJS
 
 ---
 
-## Vows/Should
+## Vows
+
+<!-- Eric -->
+
+---
+
+## Should
 
 <!-- Eric -->
 
@@ -105,7 +111,7 @@ A behaviour driven development (BDD) framework to test JavaScript code:
 			expect(sayHi('David')).toBe('Hi David');
 		});
 
-		it('Should return the answer to all questions, function() {
+		it('Should return the answer to all questions', function() {
 			expecte(getAnswer()).toBe(42);
 		}
     });

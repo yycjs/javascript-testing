@@ -2,7 +2,29 @@
 
 ---
 
-# Testing
+## Why testing?
+
+- Unit
+- Functional
+- Acceptance
+- Integration
+
+---
+
+## Unit tests
+
+Split functionality into contained units
+test each part
+
+Stubs
+
+---
+
+## TDD
+
+Test Driven Development
+
+__Tests first__
 
 ---
 
@@ -20,10 +42,52 @@ __Functional tests__
 
 Test if user interaction works as expected
 
+---
+
+## Browserstack
+
+<!-- David -->
+
+---
+
+## Continous Integration
+
+<!-- David -->
+
+---
+
+## Headless browsers
+
+Zombie.js
+PhantomJS
+
+---
+
+# Testing frameworks
+
+---
+
+## Nodeunit
+
+<!-- David -->
+
+---
+
+## Mocha
+
+<!-- Eric -->
+
+---
+
+## Vows/Should
+
+<!-- Eric -->
 
 ---
 
 ## Jasmine
+
+<!-- David -->
 
 A behaviour driven development (BDD) framework to test JavaScript code:
 
@@ -50,6 +114,8 @@ A behaviour driven development (BDD) framework to test JavaScript code:
 
 ## QUnit
 
+<!-- David -->
+
 Originally part of jQuery but evolved into a separate unit testing suite:
 
 	!javascript
@@ -65,6 +131,8 @@ Originally part of jQuery but evolved into a separate unit testing suite:
 	});
 
 ---
+
+<!-- David -->
 
 ## FuncUnit
 

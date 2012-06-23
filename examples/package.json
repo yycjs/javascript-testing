@@ -11,6 +11,7 @@
     "url": "git@github.com:yycjs/Bootcamp4.git"
   },
   "dependencies": {
-    "should" : "*"
+    "should" : "*",
+    "vows" : "*"
   }
 }

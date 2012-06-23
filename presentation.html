@@ -70,7 +70,7 @@
             </aside>
             
             <aside class="page_number">
-              1/18
+              1/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -107,7 +107,7 @@
             </aside>
             
             <aside class="page_number">
-              2/18
+              2/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -140,7 +140,7 @@ test each part</p>
             </aside>
             
             <aside class="page_number">
-              3/18
+              3/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -172,7 +172,7 @@ test each part</p>
             </aside>
             
             <aside class="page_number">
-              4/18
+              4/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -208,7 +208,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              5/18
+              5/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -247,7 +247,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              6/18
+              6/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -285,7 +285,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              7/18
+              7/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -317,7 +317,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              8/18
+              8/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -346,7 +346,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              9/18
+              9/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -397,7 +397,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              10/18
+              10/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -406,13 +406,38 @@ injecting mock dependencies if necessary.</p>
       
       <!-- slide source: readme.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Mocha</h2></header>
+            <header><h2>Mocha + Should.js</h2></header>
             
             
-            <section><!-- Eric --></section>
+            <section><p>describe('BlogPost test', function() {</p>
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;BlogPost test&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should be published at the current time&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">().</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">());</span>
+    <span class="p">});</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should throw an exception&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="k">throw</span><span class="p">();</span>
+    <span class="p">});</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Generates some neat HTML&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">post</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
+        <span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+
+<span class="p">});</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -428,7 +453,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              11/18
+              11/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -443,7 +468,22 @@ injecting mock dependencies if necessary.</p>
             <header><h2>Vows</h2></header>
             
             
-            <section><!-- Eric --></section>
+            <section><p>vows.describe('Array').addBatch({                    <br />
+    'BlogPost' : {
+        topic : new BlogPost('Hello', 'Hello world'),</p>
+<pre><code>    'unpublished post throws exception' : function(topic) {
+        assert.throws(topic.toString);
+    },
+
+    'generates neat HTML' : function(topic) {
+        topic.publish();
+        assert.equal(topic.toString(), "&lt;h1&gt;Hello&lt;/h1&gt;" +
+            "&lt;h6&gt;Published on " + topic.date.toString() + "&lt;/h6&gt;" +
+            "&lt;p&gt;Hello world&lt;/p&gt;", 'Generated expected HTML');
+    }
+}
+</code></pre>
+<p>}).run();</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -459,38 +499,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              12/18
-            </aside>
-            <img class="logo" src="theme/yycjs-logo.png">
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: readme.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h2>Should</h2></header>
-            
-            
-            <section><!-- Eric --></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="readme.md">readme.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              13/18
+              12/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -547,7 +556,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              14/18
+              13/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -601,7 +610,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              15/18
+              14/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -655,7 +664,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              16/18
+              15/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -702,7 +711,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              17/18
+              16/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -731,7 +740,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              18/18
+              17/17
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -801,7 +810,7 @@ injecting mock dependencies if necessary.</p>
         </tr>
         
         <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">Mocha</a></th>
+          <th><a href="#slide11">Mocha + Should.js</a></th>
           <td><a href="#slide11">11</a></td>
         </tr>
         
@@ -811,35 +820,30 @@ injecting mock dependencies if necessary.</p>
         </tr>
         
         <tr id="toc-row-13" class="sub">
-          <th><a href="#slide13">Should</a></th>
+          <th><a href="#slide13">Nodeunit</a></th>
           <td><a href="#slide13">13</a></td>
         </tr>
         
         <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14">Nodeunit</a></th>
+          <th><a href="#slide14">Jasmine</a></th>
           <td><a href="#slide14">14</a></td>
         </tr>
         
         <tr id="toc-row-15" class="sub">
-          <th><a href="#slide15">Jasmine</a></th>
+          <th><a href="#slide15"><a href="http://docs.jquery.com/Qunit">QUnit</a></a></th>
           <td><a href="#slide15">15</a></td>
         </tr>
         
         <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16"><a href="http://docs.jquery.com/Qunit">QUnit</a></a></th>
+          <th><a href="#slide16">FuncUnit</a></th>
           <td><a href="#slide16">16</a></td>
         </tr>
         
-        <tr id="toc-row-17" class="sub">
-          <th><a href="#slide17">FuncUnit</a></th>
-          <td><a href="#slide17">17</a></td>
-        </tr>
-        
       
       
-      <tr id="toc-row-18">
-        <th><a href="#slide18">Thank you</a></th>
-        <td><a href="#slide18">18</a></td>
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Thank you</a></th>
+        <td><a href="#slide17">17</a></td>
       </tr>
       
       

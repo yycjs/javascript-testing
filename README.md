@@ -111,41 +111,62 @@ __Automated and continuous quality control.__
 
 ---
 
-## Mocha + Should.js
+## [Mocha](http://visionmedia.github.com/mocha/) + [Should.js](https://github.com/visionmedia/should.js/tree/)
 
-describe('BlogPost test', function() {
+	The fun, simple, flexible JavaScript test framework
 
-	it('Should be published at the current time', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		post.date.getTime().should.equal(now.getTime());
+	!javascript
+	describe('BlogPost test', function() {
+
+		it('Should be published at the current time', function() {
+			var now = new Date(),
+				post = new BlogPost('Hello', 'Hello world');
+			post.date.getTime().should.equal(now.getTime());
+		});
+
+		it('Should throw an exception', function() {
+			var post = new BlogPost('Hello', 'Hello world');
+			post.toString.should.throw();
+		});
+
+		it('Generates some neat HTML', function() {
+			var now = new Date(),
+				post = new BlogPost('Hello', 'Hello world');
+			post.publish();
+			post.toString().should.equal("<h1>Hello</h1>" +
+				"<h6>Published on " + now.toString() + "</h6>" +
+				"<p>Hello world</p>");
+		});
+
 	});
-
-	it('Should throw an exception', function() {
-		var post = new BlogPost('Hello', 'Hello world');
-		post.toString.should.throw();
-	});
-
-	it('Generates some neat HTML', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		post.publish();
-		post.toString().should.equal("<h1>Hello</h1>" +
-			"<h6>Published on " + now.toString() + "</h6>" +
-			"<p>Hello world</p>");
-	});
-
-});
 
 ---
 
-## Vows
+## [Vows](http://vowsjs.org/)
 
-<!-- Eric -->
+	Asynchronous BDD for Node
+
+	!javascript
+	vows.describe('BlogPost').addBatch({                      
+	    'BlogPost test' : {
+	        topic : new BlogPost('Hello', 'Hello world'),
+
+	        'unpublished post throws exception' : function(topic) {
+	            assert.throws(topic.toString);
+	        },
+
+	        'generates neat HTML' : function(topic) {
+	            topic.publish();
+	            assert.equal(topic.toString(), "<h1>Hello</h1>" +
+	                "<h6>Published on " + topic.date.toString() + "</h6>" +
+	                "<p>Hello world</p>", 'Generated expected HTML');
+	        }
+	    }
+	}).run();
 
 ---
 
-## Nodeunit
+## [Nodeunit](https://github.com/caolan/nodeunit/)
 
 Easy unit testing in node.js and the browser
 
@@ -177,7 +198,7 @@ Easy unit testing in node.js and the browser
 
 ---
 
-## Jasmine
+## [Jasmine](http://pivotal.github.com/jasmine/)
 
 A behaviour driven development (BDD) framework to test JavaScript code:
 
@@ -235,7 +256,7 @@ Originally part of jQuery but evolved into a separate unit testing suite:
 
 ---
 
-## FuncUnit
+## [FuncUnit](http://funcunit.com)
 
 A functional testing suite to simulate user input based on QUnit and jQuery:
 

@@ -55,7 +55,7 @@ Test if user interaction works as expected
 - RESTful API (Beta)
 - Local tunneling
 
-![Browserstack](images/browserstack.png "Browserstack")  
+![Browserstack](images/browserstack.png "Browserstack")
 
 ---
 
@@ -63,14 +63,14 @@ Test if user interaction works as expected
 
 __Automated and continuous quality control.__
 
-<img src="images/jenkins.png" style="float: left; margin-right: 50px;" alt="Jenkins Logo" />
+- Use source control management system (SCM) for builds
+- Run reports, tests, deploy or other tools on each SCM change
+- Popular open source CI servers:
+	- [Jenkins](http://jenkins-ci.org/): Probably most popular CI server, formerly Hudson (Java)
+	- [CruiseControl](http://cruisecontrol.sourceforge.net/): CI framework initially by Thoughtworks (Java)
+	- [TravisCI](http://travis-ci.org): Distributed build platform for the open source community (NodeJS)
 
-### Jenkins
-
-- Hudson
-
-### Travis CI
-<!-- David -->
+![Jenkins](images/jenkins.png "Jenkins")
 
 ---
 
@@ -113,7 +113,7 @@ __Automated and continuous quality control.__
 
 ## [Mocha](http://visionmedia.github.com/mocha/) + [Should.js](https://github.com/visionmedia/should.js/tree/)
 
-	The fun, simple, flexible JavaScript test framework
+The fun, simple, flexible JavaScript test framework
 
 	!javascript
 	describe('BlogPost test', function() {
@@ -144,7 +144,7 @@ __Automated and continuous quality control.__
 
 ## [Vows](http://vowsjs.org/)
 
-	Asynchronous BDD for Node
+Asynchronous BDD for Node
 
 	!javascript
 	vows.describe('BlogPost').addBatch({                      

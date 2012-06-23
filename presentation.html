@@ -230,8 +230,7 @@ injecting mock dependencies if necessary.</p>
 <li>RESTful API (Beta)</li>
 <li>Local tunneling</li>
 </ul>
-<p><img alt="Browserstack" src="images/browserstack.png" title="Browserstack" /><br />
-</p></section>
+<p><img alt="Browserstack" src="images/browserstack.png" title="Browserstack" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -263,13 +262,17 @@ injecting mock dependencies if necessary.</p>
             
             
             <section><p><strong>Automated and continuous quality control.</strong></p>
-<p><img src="images/jenkins.png" style="float: left; margin-right: 50px;" alt="Jenkins Logo" /></p>
-<h3>Jenkins</h3>
 <ul>
-<li>Hudson</li>
+<li>Use source control management system (SCM) for builds</li>
+<li>Run reports, tests, deploy or other tools on each SCM change</li>
+<li>Popular open source CI servers:<ul>
+<li><a href="http://jenkins-ci.org/">Jenkins</a>: Probably most popular CI server, formerly Hudson (Java)</li>
+<li><a href="http://cruisecontrol.sourceforge.net/">CruiseControl</a>: CI framework initially by Thoughtworks (Java)</li>
+<li><a href="http://travis-ci.org">TravisCI</a>: Distributed build platform for the open source community (NodeJS)</li>
 </ul>
-<h3>Travis CI</h3>
-<!-- David --></section>
+</li>
+</ul>
+<p><img alt="Jenkins" src="images/jenkins.png" title="Jenkins" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -409,10 +412,10 @@ injecting mock dependencies if necessary.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Mocha + Should.js</h2></header>
+            <header><h2><a href="http://visionmedia.github.com/mocha/">Mocha</a> + <a href="https://github.com/visionmedia/should.js/tree/">Should.js</a></h2></header>
             
             
-            <section><p>describe('BlogPost test', function() {</p>
+            <section><p>The fun, simple, flexible JavaScript test framework</p>
 <div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;BlogPost test&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
     <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should be published at the current time&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
@@ -462,28 +465,31 @@ injecting mock dependencies if necessary.</p>
       
       <!-- slide source: readme.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Vows</h2></header>
+            <header><h2><a href="http://vowsjs.org/">Vows</a></h2></header>
             
             
-            <section><p>vows.describe('Array').addBatch({                    <br />
-    'BlogPost' : {
-        topic : new BlogPost('Hello', 'Hello world'),</p>
-<pre><code>    'unpublished post throws exception' : function(topic) {
-        assert.throws(topic.toString);
-    },
+            <section><p>Asynchronous BDD for Node</p>
+<div class="highlight"><pre><span class="nx">vows</span><span class="p">.</span><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;BlogPost&#39;</span><span class="p">).</span><span class="nx">addBatch</span><span class="p">({</span>                      
+    <span class="s1">&#39;BlogPost test&#39;</span> <span class="o">:</span> <span class="p">{</span>
+        <span class="nx">topic</span> <span class="o">:</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">),</span>
 
-    'generates neat HTML' : function(topic) {
-        topic.publish();
-        assert.equal(topic.toString(), "&lt;h1&gt;Hello&lt;/h1&gt;" +
-            "&lt;h6&gt;Published on " + topic.date.toString() + "&lt;/h6&gt;" +
-            "&lt;p&gt;Hello world&lt;/p&gt;", 'Generated expected HTML');
-    }
-}
-</code></pre>
-<p>}).run();</p></section>
+        <span class="s1">&#39;unpublished post throws exception&#39;</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">topic</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">assert</span><span class="p">.</span><span class="kr">throws</span><span class="p">(</span><span class="nx">topic</span><span class="p">.</span><span class="nx">toString</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="s1">&#39;generates neat HTML&#39;</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">topic</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">topic</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
+            <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">topic</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span> <span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
+                <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">topic</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
+                <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">,</span> <span class="s1">&#39;Generated expected HTML&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}).</span><span class="nx">run</span><span class="p">();</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -511,7 +517,7 @@ injecting mock dependencies if necessary.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Nodeunit</h2></header>
+            <header><h2><a href="https://github.com/caolan/nodeunit/">Nodeunit</a></h2></header>
             
             
             <section><p>Easy unit testing in node.js and the browser</p>
@@ -568,7 +574,7 @@ injecting mock dependencies if necessary.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Jasmine</h2></header>
+            <header><h2><a href="http://pivotal.github.com/jasmine/">Jasmine</a></h2></header>
             
             
             <section><p>A behaviour driven development (BDD) framework to test JavaScript code:</p>
@@ -676,7 +682,7 @@ injecting mock dependencies if necessary.</p>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>FuncUnit</h2></header>
+            <header><h2><a href="http://funcunit.com">FuncUnit</a></h2></header>
             
             
             <section><p>A functional testing suite to simulate user input based on QUnit and jQuery:</p>
@@ -810,22 +816,22 @@ injecting mock dependencies if necessary.</p>
         </tr>
         
         <tr id="toc-row-11" class="sub">
-          <th><a href="#slide11">Mocha + Should.js</a></th>
+          <th><a href="#slide11"><a href="http://visionmedia.github.com/mocha/">Mocha</a> + <a href="https://github.com/visionmedia/should.js/tree/">Should.js</a></a></th>
           <td><a href="#slide11">11</a></td>
         </tr>
         
         <tr id="toc-row-12" class="sub">
-          <th><a href="#slide12">Vows</a></th>
+          <th><a href="#slide12"><a href="http://vowsjs.org/">Vows</a></a></th>
           <td><a href="#slide12">12</a></td>
         </tr>
         
         <tr id="toc-row-13" class="sub">
-          <th><a href="#slide13">Nodeunit</a></th>
+          <th><a href="#slide13"><a href="https://github.com/caolan/nodeunit/">Nodeunit</a></a></th>
           <td><a href="#slide13">13</a></td>
         </tr>
         
         <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14">Jasmine</a></th>
+          <th><a href="#slide14"><a href="http://pivotal.github.com/jasmine/">Jasmine</a></a></th>
           <td><a href="#slide14">14</a></td>
         </tr>
         
@@ -835,7 +841,7 @@ injecting mock dependencies if necessary.</p>
         </tr>
         
         <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16">FuncUnit</a></th>
+          <th><a href="#slide16"><a href="http://funcunit.com">FuncUnit</a></a></th>
           <td><a href="#slide16">16</a></td>
         </tr>
         

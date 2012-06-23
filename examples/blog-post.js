@@ -18,4 +18,12 @@ BlogPost.prototype.toString = function() {
 		"<p>" + this.content + "</p>";
 }
 
-module.exports = BlogPost;
+// Exporting as a NodeJS module
+if(typeof module !== 'undefined' && module.exports) {
+	module.exports = BlogPost;
+}
+
+// In the browser
+if(typeof window !== 'undefined') {
+	window.BlogPost = BlogPost;
+}

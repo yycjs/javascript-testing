@@ -2,12 +2,14 @@
 
 ---
 
-## Why testing?
+## Why? What? How?
 
-- Unit
-- Functional
-- Acceptance
-- Integration
+__Software testing:__ The process of verifying that a software program works as expected
+
+- __Acceptance__ - High level requirements and specifications
+- __Integration__ - Parts combined and tested as a group
+- __Functional__ - Based on the specification of the software component
+- __Unit__ - Tests individual, contained units of code
 
 ---
 
@@ -111,17 +113,33 @@ __Automated and continuous quality control.__
 
 ## Mocha
 
-<!-- Eric -->
+describe('BlogPost test', function() {
+
+	it('Should be published at the current time', function() {
+		var now = new Date(),
+			post = new BlogPost('Hello', 'Hello world');
+		post.date.getTime().should.equal(now.getTime());
+	});
+
+	it('Should throw an exception', function() {
+		var post = new BlogPost('Hello', 'Hello world');
+		post.toString.should.throw();
+	});
+
+	it('Generates some neat HTML', function() {
+		var now = new Date(),
+			post = new BlogPost('Hello', 'Hello world');
+		post.publish();
+		post.toString().should.equal("<h1>Hello</h1>" +
+			"<h6>Published on " + now.toString() + "</h6>" +
+			"<p>Hello world</p>");
+	});
+
+});
 
 ---
 
 ## Vows
-
-<!-- Eric -->
-
----
-
-## Should
 
 <!-- Eric -->
 

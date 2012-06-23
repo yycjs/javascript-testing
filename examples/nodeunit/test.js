@@ -1,4 +1,4 @@
-var BlogPost = require('./blogpost');
+var BlogPost = require('../blog-post');
 
 this.suite = {
 	date : function(test) {

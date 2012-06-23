@@ -70,7 +70,7 @@
             </aside>
             
             <aside class="page_number">
-              1/17
+              1/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -106,7 +106,7 @@
             </aside>
             
             <aside class="page_number">
-              2/17
+              2/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -139,7 +139,7 @@ test each part</p>
             </aside>
             
             <aside class="page_number">
-              3/17
+              3/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -171,7 +171,7 @@ test each part</p>
             </aside>
             
             <aside class="page_number">
-              4/17
+              4/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -207,7 +207,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              5/17
+              5/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -222,7 +222,15 @@ injecting mock dependencies if necessary.</p>
             <header><h2>Browserstack</h2></header>
             
             
-            <section><!-- David --></section>
+            <section><p><a href="http://browserstack.com">Live web-based cross browser testing</a></p>
+<ul>
+<li>Browsers on VMs in Mac OS and Windows</li>
+<li>Mobile emulators (iOS, Android, Opera)</li>
+<li>RESTful API (Beta)</li>
+<li>Local tunneling</li>
+</ul>
+<p><img alt="Browserstack" src="images/browserstack.png" title="Browserstack" /><br />
+</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -238,7 +246,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              6/17
+              6/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -250,10 +258,17 @@ injecting mock dependencies if necessary.</p>
         <div class="slide">
           <div class="inner">
             
-            <header><h2>Continous Integration</h2></header>
+            <header><h2>Continuous Integration</h2></header>
             
             
-            <section><!-- David --></section>
+            <section><p><strong>Automated and continuous quality control.</strong></p>
+<p><img src="images/jenkins.png" style="float: left; margin-right: 50px;" alt="Jenkins Logo" /></p>
+<h3>Jenkins</h3>
+<ul>
+<li>Hudson</li>
+</ul>
+<h3>Travis CI</h3>
+<!-- David --></section>
             
           </div>
           <div class="presenter_notes">
@@ -269,7 +284,7 @@ injecting mock dependencies if necessary.</p>
             </aside>
             
             <aside class="page_number">
-              7/17
+              7/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -284,8 +299,8 @@ injecting mock dependencies if necessary.</p>
             <header><h2>Headless Browsers</h2></header>
             
             
-            <section><p>Zombie.js
-PhantomJS</p></section>
+            <section><h3>Zombie.js</h3>
+<h3>PhantomJS</h3></section>
             
           </div>
           <div class="presenter_notes">
@@ -301,7 +316,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              8/17
+              8/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -330,7 +345,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              9/17
+              9/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -339,13 +354,33 @@ PhantomJS</p></section>
       
       <!-- slide source: readme.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>Nodeunit</h2></header>
+            <header><h2>A blog post</h2></header>
             
             
-            <section><!-- David --></section>
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">BlogPost</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">title</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">date</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">=</span> <span class="nx">title</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">content</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/n/g</span><span class="p">,</span> <span class="s2">&quot;&lt;br /&gt;&quot;</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">date</span> <span class="o">=</span> <span class="nx">date</span> <span class="o">||</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">();</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">published</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">BlogPost</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">publish</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">published</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">BlogPost</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">toString</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">published</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="s2">&quot;This blog post is not published&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="s2">&quot;&lt;h1&gt;&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">title</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h1&gt;&quot;</span> <span class="o">+</span>
+        <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
+        <span class="s2">&quot;&lt;p&gt;&quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">content</span> <span class="o">+</span> <span class="s2">&quot;&lt;/p&gt;&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</section>
             
           </div>
           <div class="presenter_notes">
@@ -361,7 +396,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              10/17
+              10/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -392,7 +427,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              11/17
+              11/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -423,7 +458,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              12/17
+              12/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -454,7 +489,64 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              13/17
+              13/18
+            </aside>
+            <img class="logo" src="theme/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: readme.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h2>Nodeunit</h2></header>
+            
+            
+            <section><p>Easy unit testing in node.js and the browser</p>
+<div class="highlight"><pre><span class="k">this</span><span class="p">.</span><span class="nx">suite</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">date</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">test</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">test</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">(),</span> <span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">(),</span> <span class="s1">&#39;New posts date is correct&#39;</span><span class="p">);</span>
+        <span class="nx">test</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
+    <span class="p">},</span>
+
+    <span class="nx">exception</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">test</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">test</span><span class="p">.</span><span class="kr">throws</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">,</span> <span class="s2">&quot;Got exception&quot;</span><span class="p">);</span>
+        <span class="nx">test</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
+    <span class="p">},</span>
+
+    <span class="nx">toString</span> <span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">test</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">post</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
+        <span class="nx">test</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span> <span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">,</span> <span class="s1">&#39;Generated expected HTML&#39;</span><span class="p">);</span>
+        <span class="nx">test</span><span class="p">.</span><span class="nx">done</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="readme.md">readme.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -469,25 +561,27 @@ PhantomJS</p></section>
             <header><h2>Jasmine</h2></header>
             
             
-            <section><!-- David -->
-
-<p>A behaviour driven development (BDD) framework to test JavaScript code:</p>
-<div class="highlight"><pre><span class="kd">function</span> <span class="nx">sayHi</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s1">&#39;Hi &#39;</span> <span class="o">+</span> <span class="nx">name</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kd">function</span> <span class="nx">getAnswer</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="mi">42</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;A test suite&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should say hi to David&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">expect</span><span class="p">(</span><span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">)).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">&#39;Hi David&#39;</span><span class="p">);</span>
+            <section><p>A behaviour driven development (BDD) framework to test JavaScript code:</p>
+<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Blog post test&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should be published at the current time&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">());</span>
     <span class="p">});</span>
 
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should return the answer to all questions&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">expecte</span><span class="p">(</span><span class="nx">getAnswer</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should throw an exception&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">).</span><span class="nx">toThrow</span><span class="p">(</span><span class="s2">&quot;This blog post is not published&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
+
+    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Generates some neat HTML&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+        <span class="nx">post</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
+        <span class="nx">expect</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
+            <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">);</span>
+    <span class="p">});</span>
 <span class="p">});</span>
 </pre></div>
 </section>
@@ -506,7 +600,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              14/17
+              15/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -518,21 +612,30 @@ PhantomJS</p></section>
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2>QUnit</h2></header>
+            <header><h2><a href="http://docs.jquery.com/Qunit">QUnit</a></h2></header>
             
             
-            <section><!-- David -->
+            <section><p>Originally part of jQuery but evolved into a separate unit testing suite:</p>
+<div class="highlight"><pre><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;Blog post test&#39;</span><span class="p">);</span>
 
-<p>Originally part of jQuery but evolved into a separate unit testing suite:</p>
-<div class="highlight"><pre><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;Hi Sayer&#39;</span><span class="p">);</span>
-
-<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Saying hi&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">actual</span> <span class="o">=</span> <span class="nx">sayHi</span><span class="p">(</span><span class="s1">&#39;David&#39;</span><span class="p">);</span>
-    <span class="nx">equals</span><span class="p">(</span><span class="nx">actual</span><span class="p">,</span> <span class="s1">&#39;Hi David&#39;</span><span class="p">,</span> <span class="s1">&#39;Said Hi&#39;</span><span class="p">);</span>
+<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Date set to current time&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+        <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+    <span class="nx">equal</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span> <span class="nx">now</span><span class="p">,</span> <span class="s1">&#39;New posts date is correct&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 
-<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Returns the answer to all questions&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="nx">equals</span><span class="p">(</span><span class="nx">answer</span><span class="p">(),</span> <span class="mi">42</span><span class="p">,</span> <span class="s1">&#39;Got the answer to all questions&#39;</span><span class="p">);</span>
+<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Unpublished post throws exception&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+    <span class="nx">raises</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">,</span> <span class="s2">&quot;This blog post is not published&quot;</span><span class="p">,</span> <span class="s2">&quot;Got exception&quot;</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Generates HTML&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
+        <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
+    <span class="nx">post</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
+    <span class="nx">equal</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span> <span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
+        <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
+        <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">,</span> <span class="s1">&#39;Generated expected HTML&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </section>
@@ -551,7 +654,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              15/17
+              16/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -598,7 +701,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              16/17
+              17/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -627,7 +730,7 @@ PhantomJS</p></section>
             </aside>
             
             <aside class="page_number">
-              17/17
+              18/18
             </aside>
             <img class="logo" src="theme/yycjs-logo.png">
           </footer>
@@ -674,7 +777,7 @@ PhantomJS</p></section>
         </tr>
         
         <tr id="toc-row-7" class="sub">
-          <th><a href="#slide7">Continous Integration</a></th>
+          <th><a href="#slide7">Continuous Integration</a></th>
           <td><a href="#slide7">7</a></td>
         </tr>
         
@@ -692,7 +795,7 @@ PhantomJS</p></section>
       
         
         <tr id="toc-row-10" class="sub">
-          <th><a href="#slide10">Nodeunit</a></th>
+          <th><a href="#slide10">A blog post</a></th>
           <td><a href="#slide10">10</a></td>
         </tr>
         
@@ -712,25 +815,30 @@ PhantomJS</p></section>
         </tr>
         
         <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14">Jasmine</a></th>
+          <th><a href="#slide14">Nodeunit</a></th>
           <td><a href="#slide14">14</a></td>
         </tr>
         
         <tr id="toc-row-15" class="sub">
-          <th><a href="#slide15">QUnit</a></th>
+          <th><a href="#slide15">Jasmine</a></th>
           <td><a href="#slide15">15</a></td>
         </tr>
         
         <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16">FuncUnit</a></th>
+          <th><a href="#slide16"><a href="http://docs.jquery.com/Qunit">QUnit</a></a></th>
           <td><a href="#slide16">16</a></td>
+        </tr>
+        
+        <tr id="toc-row-17" class="sub">
+          <th><a href="#slide17">FuncUnit</a></th>
+          <td><a href="#slide17">17</a></td>
         </tr>
         
       
       
-      <tr id="toc-row-17">
-        <th><a href="#slide17">Thank you</a></th>
-        <td><a href="#slide17">17</a></td>
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Thank you</a></th>
+        <td><a href="#slide18">18</a></td>
       </tr>
       
       

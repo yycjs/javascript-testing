@@ -4,21 +4,31 @@
 
 ## Why? What? How?
 
-__Software testing:__ The process of verifying that a software program works as expected
+__Software Testing:__ The process of verifying that a software program works as expected
 
-- __Acceptance__ - High level requirements and specifications
-- __Integration__ - Parts combined and tested as a group
-- __Functional__ - Based on the specification of the software component
-- __Unit__ - Tests individual, contained units of code
+__Why?__: Because we said so! But also to maintain software confidence and quality.
+
+- __Acceptance__ - High level requirements and specifications.
+- __Functional__ - Based on the specification/requirements of the software component. High level test of a feature or user interaction.
+- __Unit__ - Tests individual, contained units of code.
+- __Integration__ - Test interfaces and interaction of various components (both inside and outside the system).
+- __Regression__ - Used to make sure that your software does get worse instead of getting better.
+- __Performance__ - Test the speed and performance limits of the system. Find optimal operation limits.
 
 ---
 
 ## Unit Tests
 
-Split functionality into contained units
-test each part
+- Split functionality into contained units. Ideally each function should perform one __unit__ of work.
+- Ideally we also want to isolate the code to be tested (using mocks, stubs, test harnesses)
+- Test each part.
+	- Boundary Value Testing
+	- White Box Testing
 
-Stubs
+You don't need to write tests for every scenario (and you should't). Try and kill many birds with one stone.
+
+- __Stubs__ - Used to simulate functions, return expected responses to test against.
+- __Mocks__ - Used to simulate objects. Allows control over object behaviour.
 
 ---
 
@@ -26,7 +36,21 @@ Stubs
 
 Test Driven Development
 
-__Tests first__
+__Tests first__, then code.  This is strict TDD. In reality a lot of people don't do it.
+
+Pros:
+
+- Find problems early
+- Facilitates change
+- Encourages smaller _units_ of code. More modular.
+- Promotes maintainability
+
+Cons:
+
+- It is a lot of work! Needs to be maintained
+- Can be daunting if it isn't done from the beginning.
+
+Recommendation: Write TDD acceptance/functional tests. Then write unit/integration tests as you define your implementation.
 
 ---
 
@@ -76,9 +100,19 @@ __Automated and continuous quality control.__
 
 ## Headless Browsers
 
-### Zombie.js
+### [Zombie.js](http://zombie.labnotes.org/)
+- Webkit based.
+- Written in Coffeescript.
+- Uses jQuery on server side.
+- Uses node to run.
 
-### PhantomJS
+### [PhantomJS](http://phantomjs.org/)
+- Also Webkit based.
+- Written in C++. API in Javascript and Coffeescript.
+
+Pro: Is pretty fast and works well for automated acceptance tests and UI tests
+
+Con: Only tests Webkit based browsers.
 
 ---
 
@@ -111,41 +145,62 @@ __Automated and continuous quality control.__
 
 ---
 
-## Mocha + Should.js
+## [Mocha](http://visionmedia.github.com/mocha/) + [Should.js](https://github.com/visionmedia/should.js/tree/)
 
-describe('BlogPost test', function() {
+The fun, simple, flexible JavaScript test framework
 
-	it('Should be published at the current time', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		post.date.getTime().should.equal(now.getTime());
+	!javascript
+	describe('BlogPost test', function() {
+
+		it('Should be published at the current time', function() {
+			var now = new Date(),
+				post = new BlogPost('Hello', 'Hello world');
+			post.date.getTime().should.equal(now.getTime());
+		});
+
+		it('Should throw an exception', function() {
+			var post = new BlogPost('Hello', 'Hello world');
+			post.toString.should.throw();
+		});
+
+		it('Generates some neat HTML', function() {
+			var now = new Date(),
+				post = new BlogPost('Hello', 'Hello world');
+			post.publish();
+			post.toString().should.equal("<h1>Hello</h1>" +
+				"<h6>Published on " + now.toString() + "</h6>" +
+				"<p>Hello world</p>");
+		});
+
 	});
-
-	it('Should throw an exception', function() {
-		var post = new BlogPost('Hello', 'Hello world');
-		post.toString.should.throw();
-	});
-
-	it('Generates some neat HTML', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		post.publish();
-		post.toString().should.equal("<h1>Hello</h1>" +
-			"<h6>Published on " + now.toString() + "</h6>" +
-			"<p>Hello world</p>");
-	});
-
-});
 
 ---
 
-## Vows
+## [Vows](http://vowsjs.org/)
 
-<!-- Eric -->
+Asynchronous BDD for Node
+
+	!javascript
+	vows.describe('BlogPost').addBatch({                      
+	    'BlogPost test' : {
+	        topic : new BlogPost('Hello', 'Hello world'),
+
+	        'unpublished post throws exception' : function(topic) {
+	            assert.throws(topic.toString);
+	        },
+
+	        'generates neat HTML' : function(topic) {
+	            topic.publish();
+	            assert.equal(topic.toString(), "<h1>Hello</h1>" +
+	                "<h6>Published on " + topic.date.toString() + "</h6>" +
+	                "<p>Hello world</p>", 'Generated expected HTML');
+	        }
+	    }
+	}).run();
 
 ---
 
-## Nodeunit
+## [Nodeunit](https://github.com/caolan/nodeunit/)
 
 Easy unit testing in node.js and the browser
 
@@ -177,7 +232,7 @@ Easy unit testing in node.js and the browser
 
 ---
 
-## Jasmine
+## [Jasmine](http://pivotal.github.com/jasmine/)
 
 A behaviour driven development (BDD) framework to test JavaScript code:
 
@@ -235,7 +290,7 @@ Originally part of jQuery but evolved into a separate unit testing suite:
 
 ---
 
-## FuncUnit
+## [FuncUnit](http://funcunit.com)
 
 A functional testing suite to simulate user input based on QUnit and jQuery:
 

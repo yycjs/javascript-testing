@@ -1,4 +1,6 @@
-var BlogPost = require('../blog-post');
+if(typeof window == 'undefined') {
+	var BlogPost = require('../blog-post');
+}
 
 this.suite = {
 	date : function(test) {

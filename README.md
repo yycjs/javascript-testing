@@ -50,7 +50,11 @@ Cons:
 - It is a lot of work! Needs to be maintained
 - Can be daunting if it isn't done from the beginning.
 
-Recommendation: Write TDD acceptance/functional tests. Then write unit/integration tests as you define your implementation.
+---
+
+## TDD Protip
+
+__PROTIP:__ Write TDD acceptance/functional tests. Then write unit/integration tests as you define your implementation.
 
 ---
 

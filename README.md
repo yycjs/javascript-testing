@@ -30,19 +30,20 @@ __Tests first__
 
 ---
 
-## Client Side Testing
+## JavaScript testing
 
-Client side testing is still not a common practise
+JavaScript testing very *"young"*.
 
-__Unit tests__
+Client side testing still not a common practise.
 
-Test if separate contained parts (e.g. a module) return expected values,
-injecting mock dependencies if necessary.
+___Different environments___
 
-
-__Functional tests__
-
-Test if user interaction works as expected
+- Client
+	- Requires both, functional and unit testing
+	- Browsers
+	- Screen resolutions (mobile)
+	- Internet Explorer (Boo!)
+- Server (NodeJS)
 
 ---
 

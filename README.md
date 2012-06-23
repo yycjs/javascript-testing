@@ -113,34 +113,34 @@ __Automated and continuous quality control.__
 
 	!html
 
-	!!! 5
-	head
-	  title MMC Mocha Tests
-	  meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-	  meta(name='description', content='')
-	  meta(charset='utf-8')
-	  meta(name='viewport', content='width=device-width, initial-scale=1.0')
-	  link(rel='stylesheet', type='text/css', media='screen', href='/css/mocha.css')
-	body
-	  #mocha
+	<!DOCTYPE html>
+	<head>
+		<title>Mocha Tests</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="description" content=""><meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" media="screen" href="mocha.css">
+	</head>
+	<body>
+		<div id="mocha"></div>
+	</body>
+	<script src="mocha.js" type="text/javascript"></script>
+	<script>mocha.setup('bdd')</script>
+	<script src="test.js" type="text/javascript"></script>
+	<script>
+		function assert(expr, msg) {
+		  if (!expr) throw new Error(msg || 'failed');
+		}
 
-	script(src='js/plugins/mocha.js', type='text/javascript')
-	script mocha.setup('bdd')
-	<script
-	  function assert(expr, msg) {
-	    if (!expr) throw new Error(msg || 'failed');
-	  }
-	script
-	script(src='test/duration.js', type='text/javascript')
-	script
-	  onload = function(){
-	    var runner = mocha.run();
-	    runner.globals(['foo', 'bar', 'baz']);
+		onload = function(){
+		  var runner = mocha.run();
+		  runner.globals(['foo', 'bar', 'baz']);
 
-	    // runner.on('test end', function(test){
-	    //   console.log(test.fullTitle());
-	    // });
-	  };
+		  runner.on('test end', function(test){
+		    console.log(test.fullTitle());
+		  });
+		};
+	</script>
 
 ---
 

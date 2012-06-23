@@ -54,19 +54,20 @@ Recommendation: Write TDD acceptance/functional tests. Then write unit/integrati
 
 ---
 
-## Client Side Testing
+## JavaScript testing
 
-Client side testing is still not a common practise
+JavaScript testing very *"young"*.
 
-__Unit tests__
+Client side testing still not a common practise.
 
-Test if separate contained parts (e.g. a module) return expected values,
-injecting mock dependencies if necessary.
+___Different environments___
 
-
-__Functional tests__
-
-Test if user interaction works as expected
+- Client
+	- Requires both, functional and unit testing
+	- Browsers
+	- Screen resolutions (mobile)
+	- Internet Explorer (Boo!)
+- Server (NodeJS)
 
 ---
 
@@ -79,7 +80,7 @@ Test if user interaction works as expected
 - RESTful API (Beta)
 - Local tunneling
 
-![Browserstack](images/browserstack.png "Browserstack")  
+![Browserstack](images/browserstack.png "Browserstack")
 
 ---
 
@@ -87,14 +88,14 @@ Test if user interaction works as expected
 
 __Automated and continuous quality control.__
 
-<img src="images/jenkins.png" style="float: left; margin-right: 50px;" alt="Jenkins Logo" />
+- Use source control management system (SCM) for builds
+- Run reports, tests, deploy or other tools on each SCM change
+- Popular open source CI servers:
+	- [Jenkins](http://jenkins-ci.org/): Probably most popular CI server, formerly Hudson (Java)
+	- [CruiseControl](http://cruisecontrol.sourceforge.net/): CI framework initially by Thoughtworks (Java)
+	- [TravisCI](http://travis-ci.org): Distributed build platform for the open source community (NodeJS)
 
-### Jenkins
-
-- Hudson
-
-### Travis CI
-<!-- David -->
+![Jenkins](images/jenkins.png "Jenkins")
 
 ---
 

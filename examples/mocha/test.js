@@ -1,5 +1,7 @@
-var should = require('should'),
-	BlogPost = require('../blog-post');
+if(typeof window == 'undefined') {
+	var should = require('should'),
+		BlogPost = require('../blog-post');
+}
 
 describe('BlogPost test', function() {
 

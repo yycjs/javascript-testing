@@ -111,7 +111,7 @@ __Automated and continuous quality control.__
 
 ---
 
-## Mocha
+## Mocha + Should.js
 
 describe('BlogPost test', function() {
 

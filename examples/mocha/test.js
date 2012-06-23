@@ -24,3 +24,4 @@ describe('BlogPost test', function() {
 	});
 
 });
+

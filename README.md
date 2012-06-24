@@ -1,4 +1,4 @@
-Bootcamp4
+Bootcamp4 - Javascript Testing
 =========
 
 Resources For Bootcamp #4 on Javascript Testing

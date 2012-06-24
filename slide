@@ -1,2 +1,2 @@
 #!/bin/sh
-landslide readme.md -l no -r -t theme
+landslide slides.md -l no -r -t theme

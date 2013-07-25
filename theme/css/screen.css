@@ -1,9 +1,18 @@
 body {
-  font: 14px "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  background: #fef9da;
+  font-family: 'Monda', "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
+  font-size: 16px;
+  /*background: #fef9da;*/
+  background-color: #eee;
+  background-image: url(../img/low_contrast_linen.png);
   padding: 0;
   margin: 0;
   overflow: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #E2D156;
+  font-family: 'Racing Sans One', arial, cursive;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.75);
 }
 
 div.presentation {
@@ -49,23 +58,15 @@ div.slide {
   top: 50%;
   /*background: -webkit-gradient(linear, left bottom, left top, from(#bbd), to(#fff));*/
   /*background-color: #fbe130;*/
-  background-color: #323029;
-  background: -moz-linear-gradient(bottom, #bbd, #fff);
+  /*background-color: #323029;*/
+  background-color: #1D1D1D;
+  opacity: 0.8;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
   -webkit-transition: margin 0.25s ease-in-out;
   -moz-transition: margin 0.25s ease-in-out;
   -o-transition: margin 0.25s ease-in-out;
-  border-top-left-radius: 20px;
-  -moz-border-radius-topleft: 20px;
-  -webkit-border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  -moz-border-radius-topright: 20px;
-  -webkit-border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  -moz-border-radius-bottomright: 20px;
-  -webkit-border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  -moz-border-radius-bottomleft: 20px;
-  -webkit-border-bottom-left-radius: 20px;
 }
 
 footer img {
@@ -213,15 +214,15 @@ body.presenter_view div#current_presenter_notes section {
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
   display: block;
   overflow: visible;
-    position: relative;
-    background-color: #fffeff;
-    height: 120px;
-    margin-right: 30px;
-    margin-top: 60px;
-    margin-left: 30px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-top: 10px;
+  position: relative;
+  background-color: #fffeff;
+  height: 120px;
+  margin-right: 30px;
+  margin-top: 60px;
+  margin-left: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 body.presenter_view div#current_presenter_notes section p {
@@ -281,9 +282,6 @@ body.three-d div.slides {
 
 /* Content */
 header {
-  font-family: "Arial", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
-  font-weight: normal;
-  letter-spacing: -.05em;
   position: absolute;
   left: 0;
   top: 0;
@@ -291,6 +289,11 @@ header {
 }
 
 header h1, header h2, header h3, header h4, header h5, header h6 {
+  font-family: 'Racing Sans One', arial, cursive;
+  /*font-family: "Arial", "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;*/
+  color: #202020;
+  font-weight: normal;
+  letter-spacing: -.05em;
   display: inline;
   font-size: 100%;
   font-weight: normal;
@@ -320,8 +323,13 @@ header h2:first-child {
   padding: 10px;
 }
 
+.slide header:only-child h1 {
+  font-family: 'Racing Sans One', arial, cursive;
+  text-shadow: 0px 3px 5px rgba(0, 0, 0, 0.75);
+  /*font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;*/
+}
+
 section, .slide header:only-child h1 {
-  font-family: "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;
   color: #fff;
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
   margin-left: 30px;
@@ -329,10 +337,6 @@ section, .slide header:only-child h1 {
   margin-top: 100px;
   display: block;
   overflow: hidden;
-}
-
-section {
-  color: #fff;
 }
 
 img { display: block; margin: auto; }

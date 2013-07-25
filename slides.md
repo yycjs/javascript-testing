@@ -12,6 +12,8 @@
 
 * GitHub: [ekryski.github.com](http://ekryski.github.com), Twitter: [@ekryski](http://twitter.com/ekryski)
 
+[yycjs.github.io/javascript-testing](http://yycjs.github.io/javascript-testing)
+
 ---
 
 ## Our Sponsors
@@ -67,7 +69,7 @@ JavaScript testing very *"young"*.
 
 Client side testing still not a common practise.
 
-___Different environments___
+### Different environments
 
 - Client
 	- Requires both, functional and unit testing
@@ -93,6 +95,8 @@ ___Different environments___
 
 ## Headless Browsers
 
+<img style="float: right;" alt="PhantomJS logo" src="images/phantomjs_logo.png" />
+
 ### [PhantomJS](http://phantomjs.org/)
 
 - Webkit based.
@@ -100,12 +104,10 @@ ___Different environments___
 
 ### [Zombie.js](http://zombie.labnotes.org/)
 
-- Webkit based.
-- Written in Coffeescript.
-- Uses jQuery on server side.
-- Uses node to run.
+- Written in Coffeescript and NodeJS.
+- Use jQuery on server side.
 
-__Pro__: Is pretty fast and works well for automated acceptance tests and UI tests
+__Pro__: Fast, works well for automated acceptance and UI tests
 
 __Con__: Doesn't test actual browsers
 
@@ -124,6 +126,20 @@ __Con__: Doesn't test actual browsers
 	- White Box Testing
 
 You don't need to write tests for every scenario (and you should't). Try and kill many birds with one stone.
+
+---
+
+## JavaScript unit testing
+
+<a href="http://pivotal.github.com/jasmine/" target="_blank" style="border: none;">
+  <img src="images/jasmine_logo.png" alt="Jasmine Logo" />
+</a>
+<a href="http://qunitjs.com" target="_blank" style="border: none; float: right; margin-top: 6em;">
+  <img src="images/qunit_logo.png" alt="QUnit Logo" />
+</a>
+<a href="http://visionmedia.github.com/mocha/" target="_blank" style="border: none; margin-top: 4em;">
+  <img src="images/mocha_logo.png" alt="Mocha Logo" />
+</a>
 
 ---
 
@@ -259,9 +275,9 @@ __Automated and continuous quality control.__
 - Use source control management system (SCM) for builds
 - Run reports, tests, deploy or other tools on each SCM change
 - Popular open source CI servers:
-	- [Jenkins](http://jenkins-ci.org/): Probably most popular CI server, formerly Hudson (Java)
-	- [CruiseControl](http://cruisecontrol.sourceforge.net/): CI framework initially by Thoughtworks (Java)
-	- [TravisCI](http://travis-ci.org): Distributed build platform for the open source community (NodeJS)
+	- [Jenkins](http://jenkins-ci.org/): Probably most popular CI server, formerly Hudson
+	- [CruiseControl](http://cruisecontrol.sourceforge.net/): CI framework initially by Thoughtworks
+	- [TravisCI](http://travis-ci.org): Distributed build platform for the open source community
 
 ![Jenkins](images/jenkins.png "Jenkins")
 

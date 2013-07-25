@@ -149,6 +149,63 @@ You don't need to write tests for every scenario (and you should't). Try and kil
 			"<h6>Published on " + this.date.toString() + "</h6>" +
 			"<p>" + this.content + "</p>";
 	}
+---
+
+## [QUnit](http://docs.jquery.com/Qunit)
+
+Originally part of jQuery but evolved into a separate unit testing suite:
+
+	!javascript
+	module('Blog post test');
+
+	test('Date set to current time', function() {
+		var now = new Date(),
+			post = new BlogPost('Hello', 'Hello world');
+		equal(post.date, now, 'New posts date is correct');
+	});
+
+	test('Unpublished post throws exception', function() {
+		var post = new BlogPost('Hello', 'Hello world');
+		raises(post.toString, "This blog post is not published", "Got exception");
+	});
+
+	test('Generates HTML', function() {
+		var now = new Date(),
+			post = new BlogPost('Hello', 'Hello world');
+		post.publish();
+		equal(post.toString(), "<h1>Hello</h1>" +
+			"<h6>Published on " + now.toString() + "</h6>" +
+			"<p>Hello world</p>", 'Generated expected HTML');
+	});
+
+---
+
+## [Jasmine](http://pivotal.github.com/jasmine/)
+
+A behaviour driven development (BDD) framework to test JavaScript code:
+
+	!javascript
+	describe('Blog post test', function () {
+		it('Should be published at the current time', function() {
+			var now = new Date(),
+				post = new BlogPost('Hello', 'Hello world');
+			expect(post.date.getTime()).toBe(now.getTime());
+		});
+
+		it('Should throw an exception', function() {
+			var post = new BlogPost('Hello', 'Hello world');
+			expect(post.toString).toThrow("This blog post is not published");
+		});
+
+		it('Generates some neat HTML', function() {
+			var now = new Date(),
+				post = new BlogPost('Hello', 'Hello world');
+			post.publish();
+			expect(post.toString()).toBe("<h1>Hello</h1>" +
+				"<h6>Published on " + now.toString() + "</h6>" +
+				"<p>Hello world</p>");
+		});
+	});
 
 ---
 
@@ -183,65 +240,15 @@ The fun, simple, flexible JavaScript test framework
 
 ---
 
-## [Jasmine](http://pivotal.github.com/jasmine/)
-
-A behaviour driven development (BDD) framework to test JavaScript code:
-
-	!javascript
-	describe('Blog post test', function () {
-		it('Should be published at the current time', function() {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			expect(post.date.getTime()).toBe(now.getTime());
-		});
-
-		it('Should throw an exception', function() {
-			var post = new BlogPost('Hello', 'Hello world');
-			expect(post.toString).toThrow("This blog post is not published");
-		});
-
-		it('Generates some neat HTML', function() {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			post.publish();
-			expect(post.toString()).toBe("<h1>Hello</h1>" +
-				"<h6>Published on " + now.toString() + "</h6>" +
-				"<p>Hello world</p>");
-		});
-	});
-
----
-
-## [QUnit](http://docs.jquery.com/Qunit)
-
-Originally part of jQuery but evolved into a separate unit testing suite:
-
-	!javascript
-	module('Blog post test');
-
-	test('Date set to current time', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		equal(post.date, now, 'New posts date is correct');
-	});
-
-	test('Unpublished post throws exception', function() {
-		var post = new BlogPost('Hello', 'Hello world');
-		raises(post.toString, "This blog post is not published", "Got exception");
-	});
-
-	test('Generates HTML', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		post.publish();
-		equal(post.toString(), "<h1>Hello</h1>" +
-			"<h6>Published on " + now.toString() + "</h6>" +
-			"<p>Hello world</p>", 'Generated expected HTML');
-	});
-
----
-
 # Running tests
+
+---
+
+## Test runners
+
+---
+
+## Testee
 
 ---
 
@@ -286,4 +293,8 @@ A functional testing suite to simulate user input based on QUnit and jQuery:
 
 ---
 
-# Thank you
+## Next month
+
+- 3 hour slide show about Daves holiday in Germany
+- Short talks
+- TBA

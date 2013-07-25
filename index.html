@@ -88,7 +88,7 @@
             </aside>
             
             <aside class="page_number">
-              1/23
+              1/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -127,7 +127,7 @@
             </aside>
             
             <aside class="page_number">
-              2/23
+              2/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -161,7 +161,7 @@
             </aside>
             
             <aside class="page_number">
-              3/23
+              3/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -193,7 +193,7 @@
             </aside>
             
             <aside class="page_number">
-              4/23
+              4/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -239,7 +239,7 @@
             </aside>
             
             <aside class="page_number">
-              5/23
+              5/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -277,7 +277,7 @@
             </aside>
             
             <aside class="page_number">
-              6/23
+              6/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -320,7 +320,7 @@
             </aside>
             
             <aside class="page_number">
-              7/23
+              7/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -358,7 +358,7 @@
             </aside>
             
             <aside class="page_number">
-              8/23
+              8/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -401,7 +401,7 @@
             </aside>
             
             <aside class="page_number">
-              9/23
+              9/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -430,7 +430,7 @@
             </aside>
             
             <aside class="page_number">
-              10/23
+              10/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -470,7 +470,7 @@
             </aside>
             
             <aside class="page_number">
-              11/23
+              11/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -509,7 +509,7 @@
             </aside>
             
             <aside class="page_number">
-              12/23
+              12/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -560,171 +560,7 @@
             </aside>
             
             <aside class="page_number">
-              13/23
-            </aside>
-            <img class="logo" src="theme/img/yycjs-logo.png">
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h2><a href="http://docs.jquery.com/Qunit">QUnit</a></h2></header>
-            
-            
-            <section><p>Originally part of jQuery but evolved into a separate unit testing suite:</p>
-<div class="highlight"><pre><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;Blog post test&#39;</span><span class="p">);</span>
-
-<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Date set to current time&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
-        <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-    <span class="nx">equal</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">,</span> <span class="nx">now</span><span class="p">,</span> <span class="s1">&#39;New posts date is correct&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Unpublished post throws exception&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-    <span class="nx">raises</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">,</span> <span class="s2">&quot;This blog post is not published&quot;</span><span class="p">,</span> <span class="s2">&quot;Got exception&quot;</span><span class="p">);</span>
-<span class="p">});</span>
-
-<span class="nx">test</span><span class="p">(</span><span class="s1">&#39;Generates HTML&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
-        <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-    <span class="nx">post</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
-    <span class="nx">equal</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">(),</span> <span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
-        <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
-        <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">,</span> <span class="s1">&#39;Generated expected HTML&#39;</span><span class="p">);</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides.md">slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              14/23
-            </aside>
-            <img class="logo" src="theme/img/yycjs-logo.png">
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h2><a href="http://pivotal.github.com/jasmine/">Jasmine</a></h2></header>
-            
-            
-            <section><p>A behaviour driven development (BDD) framework to test JavaScript code:</p>
-<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;Blog post test&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should be published at the current time&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
-            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-        <span class="nx">expect</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">());</span>
-    <span class="p">});</span>
-
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should throw an exception&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-        <span class="nx">expect</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">).</span><span class="nx">toThrow</span><span class="p">(</span><span class="s2">&quot;This blog post is not published&quot;</span><span class="p">);</span>
-    <span class="p">});</span>
-
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Generates some neat HTML&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
-            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-        <span class="nx">post</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
-        <span class="nx">expect</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">()).</span><span class="nx">toBe</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
-            <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
-            <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">);</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides.md">slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              15/23
-            </aside>
-            <img class="logo" src="theme/img/yycjs-logo.png">
-          </footer>
-        </div>
-      </div>
-      
-      <!-- slide source: slides.md -->
-      <div class="slide-wrapper">
-        <div class="slide has_code">
-          <div class="inner">
-            
-            <header><h2><a href="http://visionmedia.github.com/mocha/">Mocha</a> + <a href="https://github.com/visionmedia/should.js/tree/">Should.js</a></h2></header>
-            
-            
-            <section><p>The fun, simple, flexible JavaScript test framework</p>
-<div class="highlight"><pre><span class="nx">describe</span><span class="p">(</span><span class="s1">&#39;BlogPost test&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should be published at the current time&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
-            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-        <span class="nx">post</span><span class="p">.</span><span class="nx">date</span><span class="p">.</span><span class="nx">getTime</span><span class="p">().</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">now</span><span class="p">.</span><span class="nx">getTime</span><span class="p">());</span>
-    <span class="p">});</span>
-
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Should throw an exception&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-        <span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">.</span><span class="nx">should</span><span class="p">.</span><span class="k">throw</span><span class="p">();</span>
-    <span class="p">});</span>
-
-    <span class="nx">it</span><span class="p">(</span><span class="s1">&#39;Generates some neat HTML&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="kd">var</span> <span class="nx">now</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(),</span>
-            <span class="nx">post</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">BlogPost</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="s1">&#39;Hello world&#39;</span><span class="p">);</span>
-        <span class="nx">post</span><span class="p">.</span><span class="nx">publish</span><span class="p">();</span>
-        <span class="nx">post</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">should</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="s2">&quot;&lt;h1&gt;Hello&lt;/h1&gt;&quot;</span> <span class="o">+</span>
-            <span class="s2">&quot;&lt;h6&gt;Published on &quot;</span> <span class="o">+</span> <span class="nx">now</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;&lt;/h6&gt;&quot;</span> <span class="o">+</span>
-            <span class="s2">&quot;&lt;p&gt;Hello world&lt;/p&gt;&quot;</span><span class="p">);</span>
-    <span class="p">});</span>
-
-<span class="p">});</span>
-</pre></div>
-</section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Presenter Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides.md">slides.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              16/23
+              13/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -753,7 +589,7 @@
             </aside>
             
             <aside class="page_number">
-              17/23
+              14/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -768,6 +604,20 @@
             <header><h2>Test runners</h2></header>
             
             
+            <section><p>Automate running your JavaScript tests <strong>in any available browser</strong> and make the results persistent.</p>
+<ul>
+<li><a href="http://karma-runner.github.io/0.8/index.html">Karma</a></li>
+<li><a href="https://github.com/airportyh/testem">Testem</a></li>
+<li><a href="http://daffl.github.io/testee.js/">Testee.js</a></li>
+<li><a href="http://yuilibrary.com/projects/yeti/">YUI Yeti</a></li>
+<li><a href="http://docs.busterjs.org/en/latest/">BusterJS</a></li>
+</ul>
+<p>Services</p>
+<ul>
+<li><a href="https://ci.testling.com/">Testling CI</a></li>
+<li><a href="http://swarm.jquery.org/">TestSwarm</a></li>
+</ul></section>
+            
           </div>
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
@@ -782,7 +632,7 @@
             </aside>
             
             <aside class="page_number">
-              18/23
+              15/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -797,6 +647,16 @@
             <header><h2>Testee</h2></header>
             
             
+            <section><p>Testee.JS runs your Mocha, QUnit or Jasmine unit tests from the command line using any browser.</p>
+<ul>
+<li>Runs on all browsers (supporting SocketIO)</li>
+<li>Many output formats
+<img src="images/testee_logo.png" alt="Testee Logo" style="float: right;" /></li>
+<li>CI integration</li>
+<li>BrowserStack support</li>
+<li>GruntJS Task</li>
+</ul></section>
+            
           </div>
           <div class="presenter_notes">
             <header><h1>Presenter Notes</h1></header>
@@ -811,7 +671,7 @@
             </aside>
             
             <aside class="page_number">
-              19/23
+              16/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -826,8 +686,7 @@
             <header><h2>Continuous Integration</h2></header>
             
             
-            <section><p><strong>Automated and continuous quality control.</strong></p>
-<ul>
+            <section><ul>
 <li>Use source control management system (SCM) for builds</li>
 <li>Run reports, tests, deploy or other tools on each SCM change</li>
 <li>Popular open source CI servers:<ul>
@@ -837,7 +696,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="Jenkins" src="images/jenkins.png" title="Jenkins" /></p></section>
+<p><img src="images/jenkins.png" alt="Mr. Jenkins" style="margin-top: -1.5em;" /></p></section>
             
           </div>
           <div class="presenter_notes">
@@ -853,7 +712,7 @@
             </aside>
             
             <aside class="page_number">
-              20/23
+              17/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -882,7 +741,49 @@
             </aside>
             
             <aside class="page_number">
-              21/23
+              18/21
+            </aside>
+            <img class="logo" src="theme/img/yycjs-logo.png">
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h2>Function web application testing</h2></header>
+            
+            
+            <section><h3>Open Source Libraries</h3>
+<ul>
+<li><a href="http://zombie.labnotes.org/">Zombie.js</a> - Headles browser with automation API</li>
+<li><a href="http://casperjs.org/">CasperJS</a> - Website automation using PhantomJS</li>
+<li><a href="http://funcunit.com">FuncUnit</a> - Clients side functional testing</li>
+<li><a href="http://docs.seleniumhq.org/">Selenium</a> - Browser automation toool</li>
+</ul>
+<h3>Services</h3>
+<ul>
+<li><a href="https://saucelabs.com/">SauceLabs</a></li>
+<li><a href="http://utest.com">uTest</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -894,23 +795,22 @@
         <div class="slide has_code">
           <div class="inner">
             
-            <header><h2><a href="http://funcunit.com">FuncUnit</a></h2></header>
+            <header><h2><strong>FuncUnit</strong></h2></header>
             
             
-            <section><p>A functional testing suite to simulate user input based on QUnit and jQuery:</p>
-<div class="highlight"><pre><span class="nx">module</span><span class="p">(</span><span class="s2">&quot;jQuery Demo tester&quot;</span><span class="p">,{</span>
-    <span class="nx">setup</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-        <span class="nx">S</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;demo.html&#39;</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">});</span>
-
-<span class="nx">test</span><span class="p">(</span><span class="s2">&quot;Plugin says hi&quot;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-    <span class="c1">// Type some text into &lt;input name=&quot;your-name&quot; /&gt;</span>
-    <span class="nx">S</span><span class="p">(</span><span class="s1">&#39;input[name=&quot;your-name&quot;]&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="s2">&quot;David&quot;</span><span class="p">)</span>
-    <span class="c1">// Click the button</span>
-    <span class="nx">S</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">();</span>
-    <span class="c1">// Check the HTML content</span>
-    <span class="nx">S</span><span class="p">(</span><span class="s1">&#39;#mydiv&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Hi David&#39;</span><span class="p">);</span>
+            <section><p>Functional testing library built on top of <strong>jQuery</strong> and <strong>QUnit</strong>:</p>
+<ul>
+<li>Use jQuery syntax to emulate user input</li>
+<li>Write QUnit style tests</li>
+</ul>
+<p><strong>Testing a <a href="http://todomvc.com">TodoMVC</a> app</strong></p>
+<div class="highlight"><pre><span class="nx">test</span><span class="p">(</span><span class="s1">&#39;TodoMVC app&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">S</span><span class="p">(</span><span class="s1">&#39;#new-todo&#39;</span><span class="p">).</span><span class="nx">click</span><span class="p">().</span><span class="nx">type</span><span class="p">(</span><span class="s1">&#39;Do some nerdy stuff\r&#39;</span><span class="p">).</span><span class="nx">wait</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+    <span class="nx">S</span><span class="p">(</span><span class="s1">&#39;#todo-list li&#39;</span><span class="p">).</span><span class="nx">size</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Got one Todo&#39;</span><span class="p">);</span>
+    <span class="nx">S</span><span class="p">(</span><span class="s1">&#39;#todo-list li:first label&#39;</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">html</span><span class="p">(</span><span class="s1">&#39;Do some nerdy stuff&#39;</span><span class="p">,</span> <span class="s1">&#39;Todo has correct text&#39;</span><span class="p">);</span>
+    <span class="nx">S</span><span class="p">(</span><span class="s1">&#39;#todo-count&#39;</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="sr">/&lt;strong&gt;1&lt;\/strong&gt;(.*)item(.*)left/</span><span class="p">,</span>
+        <span class="s1">&#39;Todo count text is correct&#39;</span><span class="p">);</span>
 <span class="p">});</span>
 </pre></div>
 </section>
@@ -929,7 +829,7 @@
             </aside>
             
             <aside class="page_number">
-              22/23
+              20/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -945,8 +845,7 @@
             
             
             <section><ul>
-<li>3 hour slide show about Daves holiday in Germany</li>
-<li>Short talks</li>
+<li>3 hour slide show about Daves holiday</li>
 <li>TBA</li>
 </ul></section>
             
@@ -964,7 +863,7 @@
             </aside>
             
             <aside class="page_number">
-              23/23
+              21/21
             </aside>
             <img class="logo" src="theme/img/yycjs-logo.png">
           </footer>
@@ -1048,60 +947,50 @@
           <td><a href="#slide13">13</a></td>
         </tr>
         
-        <tr id="toc-row-14" class="sub">
-          <th><a href="#slide14"><a href="http://docs.jquery.com/Qunit">QUnit</a></a></th>
-          <td><a href="#slide14">14</a></td>
-        </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Running tests</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
         
         <tr id="toc-row-15" class="sub">
-          <th><a href="#slide15"><a href="http://pivotal.github.com/jasmine/">Jasmine</a></a></th>
+          <th><a href="#slide15">Test runners</a></th>
           <td><a href="#slide15">15</a></td>
         </tr>
         
         <tr id="toc-row-16" class="sub">
-          <th><a href="#slide16"><a href="http://visionmedia.github.com/mocha/">Mocha</a> + <a href="https://github.com/visionmedia/should.js/tree/">Should.js</a></a></th>
+          <th><a href="#slide16">Testee</a></th>
           <td><a href="#slide16">16</a></td>
         </tr>
         
+        <tr id="toc-row-17" class="sub">
+          <th><a href="#slide17">Continuous Integration</a></th>
+          <td><a href="#slide17">17</a></td>
+        </tr>
+        
       
       
-      <tr id="toc-row-17">
-        <th><a href="#slide17">Running tests</a></th>
-        <td><a href="#slide17">17</a></td>
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Functional testing</a></th>
+        <td><a href="#slide18">18</a></td>
       </tr>
       
         
-        <tr id="toc-row-18" class="sub">
-          <th><a href="#slide18">Test runners</a></th>
-          <td><a href="#slide18">18</a></td>
-        </tr>
-        
         <tr id="toc-row-19" class="sub">
-          <th><a href="#slide19">Testee</a></th>
+          <th><a href="#slide19">Function web application testing</a></th>
           <td><a href="#slide19">19</a></td>
         </tr>
         
         <tr id="toc-row-20" class="sub">
-          <th><a href="#slide20">Continuous Integration</a></th>
+          <th><a href="#slide20"><strong>FuncUnit</strong></a></th>
           <td><a href="#slide20">20</a></td>
         </tr>
         
-      
-      
-      <tr id="toc-row-21">
-        <th><a href="#slide21">Functional testing</a></th>
-        <td><a href="#slide21">21</a></td>
-      </tr>
-      
-        
-        <tr id="toc-row-22" class="sub">
-          <th><a href="#slide22"><a href="http://funcunit.com">FuncUnit</a></a></th>
-          <td><a href="#slide22">22</a></td>
-        </tr>
-        
-        <tr id="toc-row-23" class="sub">
-          <th><a href="#slide23">Next month</a></th>
-          <td><a href="#slide23">23</a></td>
+        <tr id="toc-row-21" class="sub">
+          <th><a href="#slide21">Next month</a></th>
+          <td><a href="#slide21">21</a></td>
         </tr>
         
       

@@ -167,110 +167,43 @@ You don't need to write tests for every scenario (and you should't). Try and kil
 	}
 ---
 
-## [QUnit](http://docs.jquery.com/Qunit)
-
-Originally part of jQuery but evolved into a separate unit testing suite:
-
-	!javascript
-	module('Blog post test');
-
-	test('Date set to current time', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		equal(post.date, now, 'New posts date is correct');
-	});
-
-	test('Unpublished post throws exception', function() {
-		var post = new BlogPost('Hello', 'Hello world');
-		raises(post.toString, "This blog post is not published", "Got exception");
-	});
-
-	test('Generates HTML', function() {
-		var now = new Date(),
-			post = new BlogPost('Hello', 'Hello world');
-		post.publish();
-		equal(post.toString(), "<h1>Hello</h1>" +
-			"<h6>Published on " + now.toString() + "</h6>" +
-			"<p>Hello world</p>", 'Generated expected HTML');
-	});
-
----
-
-## [Jasmine](http://pivotal.github.com/jasmine/)
-
-A behaviour driven development (BDD) framework to test JavaScript code:
-
-	!javascript
-	describe('Blog post test', function () {
-		it('Should be published at the current time', function() {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			expect(post.date.getTime()).toBe(now.getTime());
-		});
-
-		it('Should throw an exception', function() {
-			var post = new BlogPost('Hello', 'Hello world');
-			expect(post.toString).toThrow("This blog post is not published");
-		});
-
-		it('Generates some neat HTML', function() {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			post.publish();
-			expect(post.toString()).toBe("<h1>Hello</h1>" +
-				"<h6>Published on " + now.toString() + "</h6>" +
-				"<p>Hello world</p>");
-		});
-	});
-
----
-
-## [Mocha](http://visionmedia.github.com/mocha/) + [Should.js](https://github.com/visionmedia/should.js/tree/)
-
-The fun, simple, flexible JavaScript test framework
-
-	!javascript
-	describe('BlogPost test', function() {
-
-		it('Should be published at the current time', function() {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			post.date.getTime().should.equal(now.getTime());
-		});
-
-		it('Should throw an exception', function() {
-			var post = new BlogPost('Hello', 'Hello world');
-			post.toString.should.throw();
-		});
-
-		it('Generates some neat HTML', function() {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			post.publish();
-			post.toString().should.equal("<h1>Hello</h1>" +
-				"<h6>Published on " + now.toString() + "</h6>" +
-				"<p>Hello world</p>");
-		});
-
-	});
-
----
-
 # Running tests
 
 ---
 
 ## Test runners
 
+Automate running your JavaScript tests __in any available browser__ and make the results persistent.
+
+- [Karma](http://karma-runner.github.io/0.8/index.html)
+- [Testem](https://github.com/airportyh/testem)
+- [Testee.js](http://daffl.github.io/testee.js/)
+- [YUI Yeti](http://yuilibrary.com/projects/yeti/)
+- [BusterJS](http://docs.busterjs.org/en/latest/)
+
+Services
+
+- [Testling CI](https://ci.testling.com/)
+- [TestSwarm](http://swarm.jquery.org/)
+
 ---
 
 ## Testee
 
+
+Testee.JS runs your Mocha, QUnit or Jasmine unit tests from the command line using any browser.
+
+- Runs on all browsers (supporting SocketIO)
+- Many output formats
+<img src="images/testee_logo.png" alt="Testee Logo" style="float: right;" />
+- CI integration
+- BrowserStack support
+- GruntJS Task
+
+
 ---
 
 ## Continuous Integration
-
-__Automated and continuous quality control.__
 
 - Use source control management system (SCM) for builds
 - Run reports, tests, deploy or other tools on each SCM change
@@ -279,7 +212,7 @@ __Automated and continuous quality control.__
 	- [CruiseControl](http://cruisecontrol.sourceforge.net/): CI framework initially by Thoughtworks
 	- [TravisCI](http://travis-ci.org): Distributed build platform for the open source community
 
-![Jenkins](images/jenkins.png "Jenkins")
+<img src="images/jenkins.png" alt="Mr. Jenkins" style="margin-top: -1.5em;" />
 
 ---
 
@@ -287,30 +220,44 @@ __Automated and continuous quality control.__
 
 ---
 
-## [FuncUnit](http://funcunit.com)
+## Function web application testing
 
-A functional testing suite to simulate user input based on QUnit and jQuery:
+### Open Source Libraries
+
+- [Zombie.js](http://zombie.labnotes.org/) - Headles browser with automation API
+- [CasperJS](http://casperjs.org/) - Website automation using PhantomJS
+- [FuncUnit](http://funcunit.com) - Clients side functional testing
+- [Selenium](http://docs.seleniumhq.org/) - Browser automation toool
+
+### Services
+
+- [SauceLabs](https://saucelabs.com/)
+- [uTest](http://utest.com)
+
+---
+
+## __FuncUnit__
+
+Functional testing library built on top of __jQuery__ and __QUnit__:
+
+- Use jQuery syntax to emulate user input
+- Write QUnit style tests
+
+__Testing a [TodoMVC](http://todomvc.com) app__
 
 	!javascript
-	module("jQuery Demo tester",{
-		setup: function() {
-			S.open('demo.html')
-		}
+	test('TodoMVC app', function() {
+		S('#new-todo').click().type('Do some nerdy stuff\r').wait(500);
+		S('#todo-list li').size(1, 'Got one Todo');
+		S('#todo-list li:first label')
+			.html('Do some nerdy stuff', 'Todo has correct text');
+		S('#todo-count').html(/<strong>1<\/strong>(.*)item(.*)left/,
+			'Todo count text is correct');
 	});
-
-	test("Plugin says hi",function(){
-		// Type some text into <input name="your-name" />
-		S('input[name="your-name"]').click().type("David")
-		// Click the button
-		S('button').click();
-		// Check the HTML content
-		S('#mydiv').html('Hi David');
-    });
 
 ---
 
 ## Next month
 
-- 3 hour slide show about Daves holiday in Germany
-- Short talks
+- 3 hour slide show about Daves holiday
 - TBA

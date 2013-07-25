@@ -50,19 +50,7 @@
 
 ---
 
-## Why? What? How?
-
-### Software Testing:
-
-The process of verifying that a software program works as expected
-
-### Why?
-
-Because we said so! But also to maintain software confidence and quality.
-
----
-
-## Types of tests
+## Testing!
 
 - __Acceptance__ - High level requirements and specifications.
 - __Functional__ - Based on the specification/requirements of the software component. High level test of a feature or user interaction.
@@ -70,60 +58,6 @@ Because we said so! But also to maintain software confidence and quality.
 - __Integration__ - Test interfaces and interaction of various components (both inside and outside the system).
 - __Regression__ - Used to make sure that your software does get worse instead of getting better.
 - __Performance__ - Test the speed and performance limits of the system. Find optimal operation limits.
-
----
-
-## [BrowserStack](http://browserstack.com)
-
-### Live web-based cross browser testing
-
-![Browserstack](images/browserstack.png "Browserstack")
-
-- Browsers on VMs in Mac OS and Windows, mobile emulators
-- RESTful API
-- Local tunneling
-- Screenshots
-
----
-
-## Unit Tests
-
-- Split functionality into contained units. Ideally each function should perform one __unit__ of work.
-- Ideally we also want to isolate the code to be tested (using mocks, stubs, test harnesses)
-- Test each part.
-	- Boundary Value Testing
-	- White Box Testing
-
-You don't need to write tests for every scenario (and you should't). Try and kill many birds with one stone.
-
-- __Stubs__ - Used to simulate functions, return expected responses to test against.
-- __Mocks__ - Used to simulate objects. Allows control over object behaviour.
-
----
-
-## TDD
-
-Test Driven Development
-
-__Tests first__, then code.  This is strict TDD. In reality a lot of people don't do it.
-
-Pros:
-
-- Find problems early
-- Facilitates change
-- Encourages smaller _units_ of code. More modular.
-- Promotes maintainability
-
-Cons:
-
-- It is a lot of work! Needs to be maintained
-- Can be daunting if it isn't done from the beginning.
-
----
-
-## TDD Protip
-
-__PROTIP:__ Write TDD acceptance/functional tests. Then write unit/integration tests as you define your implementation.
 
 ---
 
@@ -144,40 +78,52 @@ ___Different environments___
 
 ---
 
-## Continuous Integration
+## [BrowserStack](http://browserstack.com)
 
-__Automated and continuous quality control.__
+### Live web-based cross browser testing
 
-- Use source control management system (SCM) for builds
-- Run reports, tests, deploy or other tools on each SCM change
-- Popular open source CI servers:
-	- [Jenkins](http://jenkins-ci.org/): Probably most popular CI server, formerly Hudson (Java)
-	- [CruiseControl](http://cruisecontrol.sourceforge.net/): CI framework initially by Thoughtworks (Java)
-	- [TravisCI](http://travis-ci.org): Distributed build platform for the open source community (NodeJS)
+![Browserstack](images/browserstack.png "Browserstack")
 
-![Jenkins](images/jenkins.png "Jenkins")
+- Browsers on VMs in Mac OS and Windows, mobile emulators
+- RESTful API
+- Local tunneling
+- Screenshots
 
 ---
 
 ## Headless Browsers
 
+### [PhantomJS](http://phantomjs.org/)
+
+- Webkit based.
+- Written in C++. API in Javascript and Coffeescript.
+
 ### [Zombie.js](http://zombie.labnotes.org/)
+
 - Webkit based.
 - Written in Coffeescript.
 - Uses jQuery on server side.
 - Uses node to run.
 
-### [PhantomJS](http://phantomjs.org/)
-- Also Webkit based.
-- Written in C++. API in Javascript and Coffeescript.
+__Pro__: Is pretty fast and works well for automated acceptance tests and UI tests
 
-Pro: Is pretty fast and works well for automated acceptance tests and UI tests
-
-Con: Only tests Webkit based browsers.
+__Con__: Doesn't test actual browsers
 
 ---
 
-# Testing Frameworks
+# Unit Testing
+
+---
+
+## What?
+
+- Split functionality into contained units. Ideally each function should perform one __unit__ of work.
+- Ideally we also want to isolate the code to be tested (using mocks, stubs, test harnesses)
+- Test each part.
+	- Boundary Value Testing
+	- White Box Testing
+
+You don't need to write tests for every scenario (and you should't). Try and kill many birds with one stone.
 
 ---
 
@@ -237,62 +183,6 @@ The fun, simple, flexible JavaScript test framework
 
 ---
 
-## [Vows](http://vowsjs.org/)
-
-Asynchronous BDD for Node
-
-	!javascript
-	vows.describe('BlogPost').addBatch({                      
-	    'BlogPost test' : {
-	        topic : new BlogPost('Hello', 'Hello world'),
-
-	        'unpublished post throws exception' : function(topic) {
-	            assert.throws(topic.toString);
-	        },
-
-	        'generates neat HTML' : function(topic) {
-	            topic.publish();
-	            assert.equal(topic.toString(), "<h1>Hello</h1>" +
-	                "<h6>Published on " + topic.date.toString() + "</h6>" +
-	                "<p>Hello world</p>", 'Generated expected HTML');
-	        }
-	    }
-	}).run();
-
----
-
-## [Nodeunit](https://github.com/caolan/nodeunit/)
-
-Easy unit testing in node.js and the browser
-
-	!javascript
-	this.suite = {
-		date : function(test) {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			test.equal(post.date.getTime(), now.getTime(), 'New posts date is correct');
-			test.done();
-		},
-
-		exception : function(test) {
-			var post = new BlogPost('Hello', 'Hello world');
-			test.throws(post.toString, "Got exception");
-			test.done();
-		},
-
-		toString : function(test) {
-			var now = new Date(),
-				post = new BlogPost('Hello', 'Hello world');
-			post.publish();
-			test.equal(post.toString(), "<h1>Hello</h1>" +
-				"<h6>Published on " + now.toString() + "</h6>" +
-				"<p>Hello world</p>", 'Generated expected HTML');
-			test.done();
-		}
-	}
-
----
-
 ## [Jasmine](http://pivotal.github.com/jasmine/)
 
 A behaviour driven development (BDD) framework to test JavaScript code:
@@ -348,6 +238,29 @@ Originally part of jQuery but evolved into a separate unit testing suite:
 			"<h6>Published on " + now.toString() + "</h6>" +
 			"<p>Hello world</p>", 'Generated expected HTML');
 	});
+
+---
+
+# Running tests
+
+---
+
+## Continuous Integration
+
+__Automated and continuous quality control.__
+
+- Use source control management system (SCM) for builds
+- Run reports, tests, deploy or other tools on each SCM change
+- Popular open source CI servers:
+	- [Jenkins](http://jenkins-ci.org/): Probably most popular CI server, formerly Hudson (Java)
+	- [CruiseControl](http://cruisecontrol.sourceforge.net/): CI framework initially by Thoughtworks (Java)
+	- [TravisCI](http://travis-ci.org): Distributed build platform for the open source community (NodeJS)
+
+![Jenkins](images/jenkins.png "Jenkins")
+
+---
+
+# Functional testing
 
 ---
 

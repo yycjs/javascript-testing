@@ -34,18 +34,35 @@
 
 ---
 
-## Last Month
+## Last Month - MVWFT?
 
-* Something awesome
-* More awesomeness
+<img src="images/todomvc.png" style="float: right;" alt="TodoMVC Logo" />
+
+* [TodoMVC](http://todomvc.com/)
+* [Backbone JS](http://backbonejs.org/)
+* [CanJS](http://canjs.com/)
+    * Live binding
+    * Models
+* [Real time TodoMVC](https://github.com/yycjs/todomvc/tree/canjs-realtime)
+    * CanJS
+    * NodeJS
+    * SocketIO
 
 ---
 
 ## Why? What? How?
 
-__Software Testing:__ The process of verifying that a software program works as expected
+### Software Testing:
 
-__Why?__: Because we said so! But also to maintain software confidence and quality.
+The process of verifying that a software program works as expected
+
+### Why?
+
+Because we said so! But also to maintain software confidence and quality.
+
+---
+
+## Types of tests
 
 - __Acceptance__ - High level requirements and specifications.
 - __Functional__ - Based on the specification/requirements of the software component. High level test of a feature or user interaction.
@@ -53,6 +70,19 @@ __Why?__: Because we said so! But also to maintain software confidence and quali
 - __Integration__ - Test interfaces and interaction of various components (both inside and outside the system).
 - __Regression__ - Used to make sure that your software does get worse instead of getting better.
 - __Performance__ - Test the speed and performance limits of the system. Find optimal operation limits.
+
+---
+
+## [BrowserStack](http://browserstack.com)
+
+### Live web-based cross browser testing
+
+![Browserstack](images/browserstack.png "Browserstack")
+
+- Browsers on VMs in Mac OS and Windows, mobile emulators
+- RESTful API
+- Local tunneling
+- Screenshots
 
 ---
 
@@ -111,19 +141,6 @@ ___Different environments___
 	- Screen resolutions (mobile)
 	- Internet Explorer (Boo!)
 - Server (NodeJS)
-
----
-
-## Browserstack
-
-[Live web-based cross browser testing](http://browserstack.com)
-
-- Browsers on VMs in Mac OS and Windows
-- Mobile emulators (iOS, Android, Opera)
-- RESTful API (Beta)
-- Local tunneling
-
-![Browserstack](images/browserstack.png "Browserstack")
 
 ---
 

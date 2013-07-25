@@ -41,8 +41,6 @@
 
 ---
 
----
-
 ## Why? What? How?
 
 __Software Testing:__ The process of verifying that a software program works as expected

@@ -27,7 +27,7 @@ describe('Blog post test', function () {
       this.fail()
     }
 
-
+    // hazoopadooooo
 
 
     now = new Date()

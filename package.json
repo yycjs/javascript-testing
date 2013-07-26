@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "grunt",
-    "test": "mocha mocha/test.js --reporter Spec"
+    "test": "mocha mocha/test.js"
   },
   "devDependencies": {
     "mocha": "~1.12.0"

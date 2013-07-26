@@ -10,7 +10,11 @@ describe('BlogPost test', function() {
 		var now = new Date(),
 			post = new BlogPost('Hello', 'Hello world');
 
-		assert(true === false, 'Something happened');
+      assert(post.date.getTime() === new Date().getTime())
+      console.log(post.date)
+      console.log(post.date.getTime())
+
+		// assert(true === false, 'Something happened');
 	});
 
 	it('Should throw an exception', function() {

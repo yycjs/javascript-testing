@@ -10,16 +10,30 @@ describe('BlogPost test', function() {
 		var now = new Date(),
 			post = new BlogPost('Hello', 'Hello world');
 
-		assert(true === false, 'Something happened');
+		assert(now.getTime(), post.date.getTime());
 	});
 
 	it('Should throw an exception', function() {
-		assert(true === false, 'Something happened');
+		try {
+			var post = new BlogPost('Hello', 'Hello world');
+			post.toString();
+			assert(false, 'Failed to throw an excepton');
+		} catch (e) {
+			assert(true, 'Threw an exception');
+		}
 	});
 
 	it('Generates some neat HTML', function() {
-		assert(true === false, 'Something happened');
+		var post = new BlogPost('Hello', 'Hello world');
+		post.publish();
+		var html = post.toString();
+		assert(html.length > 0, 'Some text generated');
 	});
 
+	describe('BlogPost text tests', function() {
+		it('Should contain a title', function() {
+			//TODO
+		});
+	});
 });
 

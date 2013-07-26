@@ -11,11 +11,10 @@
   "engines": {
     "node": "~0.10.0"
   },
-  "devDependencies": {
-    "grunt-exec": "~0.4.0",
-    "grunt-contrib-watch": "~0.3.1"
-  },
   "scripts": {
     "start": "grunt"
+  },
+  "devDependencies": {
+    "mocha": "~1.12.0"
   }
 }
